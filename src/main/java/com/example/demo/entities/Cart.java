@@ -1,6 +1,8 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -21,31 +23,40 @@ public class Cart {
     @Column(name = "cart_id")
     private Long id;
 
+    @NotNull
     @Column(name = "package_price")
     private BigDecimal package_price;
 
+    @NotNull
     @Column(name = "party_size")
     private int party_size;
 
+    @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private StatusType status;
 
+    @NotNull
+    @NotBlank
     @Column(name = "order_tracking_number")
     private String orderTrackingNumber;
 
+    @NotNull
     @Column(name = "create_date")
     @CreationTimestamp
     private Date create_date;
 
+    @NotNull
     @Column(name = "last_update")
     @UpdateTimestamp
     private Date last_update;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
+    @NotNull
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
     private Set<CartItem> cartItems = new HashSet<>();
 

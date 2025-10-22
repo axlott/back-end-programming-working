@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -21,10 +22,12 @@ public class CartItem {
     @Column(name = "cart_item_id")
     private Long id;
 
+    @NotNull
     @Column(name = "create_date")
     @CreationTimestamp
     private Date create_date;
 
+    @NotNull
     @Column(name = "last_update")
     @UpdateTimestamp
     private Date last_update;
@@ -33,6 +36,7 @@ public class CartItem {
     @JoinColumn(name = "vacation_id")
     private Vacation vacation;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "cart_id")
     private Cart cart;
