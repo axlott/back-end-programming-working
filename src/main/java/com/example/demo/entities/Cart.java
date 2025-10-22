@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name="carts")
+@Table(name = "carts")
 @Getter
 @Setter
 public class Cart {
@@ -48,4 +48,16 @@ public class Cart {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
     private Set<CartItem> cartItems = new HashSet<>();
+
+    public void add(CartItem item) {
+        if (item != null) {
+            if (this.cartItems == null) {
+                this.cartItems = new HashSet<>();
+            }
+            this.cartItems.add(item);
+            item.setCart(this);
+        }
+    }
+
+
 }

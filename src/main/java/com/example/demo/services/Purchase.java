@@ -1,16 +1,17 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Cart;
+import com.example.demo.entities.CartItem;
+import com.example.demo.entities.Customer;
 import lombok.Data;
+
+import java.util.Set;
 
 @Data
 public class Purchase {
-    Long customer;
-    Long cart;
-    String TrackingNumber;
-    Purchase(String orderTrackingNumber){
-        this.customer=1L;
-        this.cart=1L;
-        this.TrackingNumber=orderTrackingNumber;
-    }
+    private Customer customer;
+    private Cart cart;
+    private Set<CartItem> cartItems;
+
 
 }
