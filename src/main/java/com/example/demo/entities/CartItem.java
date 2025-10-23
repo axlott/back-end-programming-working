@@ -22,12 +22,10 @@ public class CartItem {
     @Column(name = "cart_item_id")
     private Long id;
 
-    @NotNull
     @Column(name = "create_date")
     @CreationTimestamp
     private Date create_date;
 
-    @NotNull
     @Column(name = "last_update")
     @UpdateTimestamp
     private Date last_update;

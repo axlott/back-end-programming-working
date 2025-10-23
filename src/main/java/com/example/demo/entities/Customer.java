@@ -48,12 +48,10 @@ public class Customer {
     @Column(name = "phone")
     private String phone;
 
-    @NotNull
     @Column(name = "create_date")
     @CreationTimestamp
     private Date create_date;
 
-    @NotNull
     @Column(name = "last_update")
     @UpdateTimestamp
     private Date last_update;

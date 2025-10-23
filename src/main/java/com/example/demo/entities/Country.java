@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -20,6 +21,7 @@ public class Country {
     @Column(name = "country_id")
     private Long id;
 
+    @NotNull
     @Column(name = "country")
     private String country_name;
 

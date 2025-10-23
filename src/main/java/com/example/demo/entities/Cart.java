@@ -41,12 +41,10 @@ public class Cart {
     @Column(name = "order_tracking_number")
     private String orderTrackingNumber;
 
-    @NotNull
     @Column(name = "create_date")
     @CreationTimestamp
     private Date create_date;
 
-    @NotNull
     @Column(name = "last_update")
     @UpdateTimestamp
     private Date last_update;

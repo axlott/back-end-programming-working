@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -18,6 +19,7 @@ public class Division {
     @Column(name = "division_id")
     private Long id;
 
+    @NotNull
     @Column(name = "division")
     private String division_name;
 
@@ -29,6 +31,7 @@ public class Division {
     @UpdateTimestamp
     private Date last_update;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "country_id")
     private Country country;
