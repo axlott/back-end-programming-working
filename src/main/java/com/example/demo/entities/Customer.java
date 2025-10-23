@@ -25,12 +25,12 @@ public class Customer {
 
     @NotNull
     @NotBlank
-    @Column(name = "first_name")
+    @Column(name = "customer_first_name")
     private String firstName;
 
     @NotNull
     @NotBlank
-    @Column(name = "last_name")
+    @Column(name = "customer_last_name")
     private String lastName;
 
     @NotNull
