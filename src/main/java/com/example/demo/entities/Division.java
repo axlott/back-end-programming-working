@@ -35,4 +35,11 @@ public class Division {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "division")
     private Set<Customer> customers;
+
+    public Long getCountry_id() {
+        if (country != null) {
+            return country.getId();
+        }
+        return null;
+    }
 }
