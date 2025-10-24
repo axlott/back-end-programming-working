@@ -27,7 +27,7 @@ public class Vacation {
     private String description;
 
     @Column(name = "travel_fare_price")
-    private BigDecimal travel_fare_price;
+    private BigDecimal travel_price;
 
     @Column(name = "image_url")
     private String image_URL;

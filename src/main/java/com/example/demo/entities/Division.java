@@ -40,8 +40,8 @@ public class Division {
     private Set<Customer> customers;
 
     public Long getCountry_id() {
-        if (country != null) {
-            return country.getId();
+        if (this.country != null) {
+            return this.country.getId();
         }
         return null;
     }

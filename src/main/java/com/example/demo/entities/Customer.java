@@ -1,8 +1,6 @@
 package com.example.demo.entities;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "customers")
+@Table(name="customers")
 @Getter
 @Setter
 public class Customer {
@@ -66,14 +64,12 @@ public class Customer {
     private Set<Cart> carts = new HashSet<>();
 
     public void add(Cart cart) {
-        if (cart != null) {
-            if (this.carts == null) {
-                this.carts = new HashSet<>();
+        if(cart != null){
+            if (this.carts==null){
+                this.carts=new HashSet<>();
             }
             this.carts.add(cart);
             cart.setCustomer(this);
         }
     }
-
-
 }
